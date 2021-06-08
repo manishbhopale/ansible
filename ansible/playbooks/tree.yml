@@ -1,0 +1,11 @@
+---
+- hosts: all
+  become: true
+  
+  tasks:
+        - name: Update
+          apt: name="*" update_cache=yes
+   
+        - name: Install tree
+          apt: name=tree state=present
+

@@ -1,0 +1,22 @@
+- hosts: all
+  tasks:
+  - name: Print ansible_os_family 
+    debug: 
+     msg: '{{ ansible_os_family }}'     
+  - name: Ensure Yum Httpd packege is update  
+    yum: 
+      name: httpd     
+      state: latest 
+    become: True 
+    when: ansible_os_family == 'Redhat'
+
+  - name: Print ansible_os_family 
+    debug: 
+       msg: '{{ ansible_os_family }}'    
+  - name: Ensure Debian Httpd packege is update 
+    apt: 
+      name: apache2 
+      state: present 
+    become: True      
+    when: ansible_os_family == 'Debian'   
+

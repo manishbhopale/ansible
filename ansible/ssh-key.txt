@@ -1,0 +1,10 @@
+Syntax---
+cat ~/.ssh/id_rsa.pub | ssh -i key.pem username@remote_host "mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && chmod -R go= ~/.ssh && cat >> ~/.ssh/authorized_keys"
+
+-----------xxxx---------xxxxxxxxxx-----------
+change username to hosts machine username of ec2 (ubuntu) and its public ip
+
+cat ~/.ssh/id_rsa.pub | ssh -i key.pem ubuntu@52.39.175.212 "mkdir -p ~/.ssh && touch ~/.ssh/authorized_keys && chmod -R go= ~/.ssh && cat >> ~/.ssh/authorized_keys"
+
+----------------xxxxx-xxx---xxxxx-xxxxx-------------
+

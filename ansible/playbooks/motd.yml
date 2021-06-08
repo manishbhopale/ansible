@@ -1,0 +1,10 @@
+---
+- hosts: all
+  become: true
+
+  tasks: 
+        - name: CHange Welcome msg for ssh connection using motd
+          lineinfile: 
+                path: /etc/motd
+                regexp: "^Welcome"
+                line: "Hey Manish, This is my ec2 instance Node server!!!"
